@@ -1,11 +1,14 @@
-import sys
-import os
+import click
+from wynn import create
 
 
-def main(*argv):
-    print(argv)
+@click.group(help="")
+def aether():
+    pass
 
 
 if __name__ == '__main__':
-    main(*sys.argv[1:])
+    aether.add_command(create.create)
+
+    aether()
 
