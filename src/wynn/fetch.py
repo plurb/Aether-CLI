@@ -20,7 +20,7 @@ class AetherRequest:
         print("Not ready yet")
 
 
-def aether_fetch(query: str) -> AetherRequest:
+def fetch(query: str) -> AetherRequest:
     with open(query) as resp:
         # TODO: Implement search feature
         text = resp.read()
@@ -29,7 +29,7 @@ def aether_fetch(query: str) -> AetherRequest:
 
 
 if __name__ == '__main__':
-    req: AetherRequest = aether_fetch(f"{sys.argv[1]}")
+    req: AetherRequest = fetch(f"{sys.argv[1]}")
     text = req.as_html()
     f = open("dump.html", 'w')
     f.write(text)

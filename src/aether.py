@@ -1,5 +1,5 @@
 import click
-from wynn import create
+from wynn.create import create
 
 
 @click.group(help="")
