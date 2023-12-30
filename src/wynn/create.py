@@ -4,13 +4,13 @@ import click
 @click.command
 @click.argument('kind', default="")
 def create(kind: str) -> None:
-
-    if kind == "spell":
-        create_spell()
-    elif kind == "exploit":
-        create_exploit()
-    elif kind == "feat":
-        create_feat()
+    match kind:
+        case "spell":
+            create_spell()
+        case "exploit":
+            create_exploit()
+        case "feat":
+            create_feat()
 
 
 def create_spell() -> None:
