@@ -1,9 +1,17 @@
 import click
+from colorama import Fore
 
 
 @click.command
 @click.argument('kind', default="")
 def create(kind: str) -> None:
+    """
+    Create a new item.
+
+    :param kind: the type of item to create
+    :return:
+    """
+
     match kind:
         case "spell":
             create_spell()
@@ -14,6 +22,12 @@ def create(kind: str) -> None:
 
 
 def create_spell() -> None:
+    """
+    Create a new spell.
+
+    :return:
+    """
+
     spell_name = input("Spell name: ")
     spell_level = int(input("Spell level: "))
 
@@ -26,7 +40,7 @@ def create_spell() -> None:
     spell_components = input("Spell components: ")
     spell_duration = input("Spell duration: ")
 
-    click.echo("Creating spell")
+    click.echo(Fore.GREEN + "Creating spell")
 
     click.echo(f"""
 ### {spell_name}
@@ -39,8 +53,20 @@ def create_spell() -> None:
 
 
 def create_exploit() -> None:
+    """
+    Create a new exploit.
+
+    :return:
+    """
+
     click.echo("Creating exploit")
 
 
 def create_feat() -> None:
+    """
+    Create a new feat.
+
+    :return:
+    """
+
     click.echo("Creating feat")
